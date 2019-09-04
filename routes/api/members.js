@@ -35,10 +35,12 @@ router.post('/', (req, res) => {
   res.json(members);
 })
 
+//update a member (email or name)
 router.put('/:id', (req, res) => {
  
 })
 
+// delete a member with id
 router.delete('/:id', (req, res) => {
 
 })
