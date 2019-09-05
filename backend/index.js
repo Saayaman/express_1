@@ -32,5 +32,8 @@ app.use(express.urlencoded({ extended: false }));
 // Members API Routes
 app.use('/api/members', require('./routes/api/members'));
 
+app.use('/exercises', require('./routes/api/exercises'));
+app.use('/users', require('./routes/api/users'));
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`))
