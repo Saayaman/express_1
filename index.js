@@ -10,12 +10,6 @@ app.get('/api', (req, res) =>
   res.send('<h1>hello world</h1>')
 )
 
-// app.get('/', (req, res) => 
-//   res.sendFile(path.join(__dirname, 'public', 'index.html'))
-// );
-
-
-//Set Static Folder
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -34,6 +28,7 @@ connection.once('open', () => {
 app.use('/api/members', require('./routes/api/members'));
 app.use('/api/exercises', require('./routes/api/exercises'));
 
+//Set Static Folder
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'frontend', 'build'))); //deploy
 
