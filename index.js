@@ -30,7 +30,7 @@ app.use('/api/exercises', require('./routes/api/exercises'));
 
 //Set Static Folder
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'frontend', 'build'))); //deploy
+  app.use(express.static(path.join('frontend/build'))); //deploy
 
   app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html')); // relative path
