@@ -9,6 +9,14 @@ const app = express();
 app.get('/api', (req, res) =>
   res.send('<h1>hello world</h1>')
 )
+app.post('/api/auth', (req, res) => {
+  const {userName, password } = req.body;
+  const admin = { userName: 'admin', password: 'adminadmin'}
+  if (userName === admin.userName && passowrd === admin.password) {
+    res.send({auth: true})
+  }
+  res.send({auth: false})
+})
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
